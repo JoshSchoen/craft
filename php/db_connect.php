@@ -25,5 +25,13 @@
                die('Could not connect: ' . mysql_error());
                
         }
-
+        /*
+$con = mysql_connect('graphicd.dotstermysql.com', 'joshschoen', 'Skuzzy4171'); 
+if (!$con) { 
+    die('Could not connect: ' . mysql_error()); 
+} 
+//echo 'Connected successfully'; 
+mysql_select_db(craft2); 
+?> 
 ?>
+*/

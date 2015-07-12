@@ -21,6 +21,11 @@ app.controller('GetCraft', function($http, $scope, craftData) {
   $scope.apiUrl = gFont.replace(/\+/g, " ").split(/\|/);
 
   $scope.fontsSizes = [8, 9, 10, 11, 12, 14, 16, 24, 28, 32, 36, 48];
+  }).
+  error(function(data, status, headers, config) {
+    console.log( 'error' + status + data + status + headers, config);
+    // called asynchronously if an error occurs
+    // or server returns response with an error status.
   });
 
   $scope.showBack = {

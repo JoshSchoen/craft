@@ -104,7 +104,9 @@ img.thumbnails {
   box-shadow: -5px 5px 5px #aaa;
 
 }
-
+.black {
+color: #000;
+}
 .front.face img {
   z-index: 100;
   border-radius: 12px;

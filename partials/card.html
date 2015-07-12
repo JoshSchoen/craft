@@ -2,6 +2,7 @@
   <div class="btn-group">
 		<button class="btn btn-primary" id="toggleBack" ng-click="toggleBack()">{{showBack.text}}</button>
 	</div>
+
   <div ng-repeat="craftGallery in craft" class="btn-group" ng-if="showBack.back===false">
   <img class="thumbnails" ng-click="addPhoto(craftGallery)" src="assets/images/{{craftGallery.content_image}}" width="60px" height="auto">
  </div>
