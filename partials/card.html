@@ -1,0 +1,46 @@
+<div class="col-md-9 edit-bar">
+  <div class="btn-group">
+		<button class="btn btn-primary" id="toggleBack" ng-click="toggleBack()">{{showBack.text}}</button>
+	</div>
+  <div ng-repeat="craftGallery in craft" class="btn-group" ng-if="showBack.back===false">
+  <img class="thumbnails" ng-click="addPhoto(craftGallery)" src="assets/images/{{craftGallery.content_image}}" width="60px" height="auto">
+ </div>
+ <div class="btn-group" role="group" ng-if="showBack.back===true" dropdown is-open="status.isopen1">
+  <button type="button" class="btn btn-default dropdown-toggle" dropdown-toggle ng-disabled="disabled">Font Size<span class="caret"></span></button>
+      <ul class="dropdown-menu" role="menu">
+      <li ng-click="changeFontSize(fontSizes)" ng-repeat="fontSizes in fontsSizes" >
+        <a href="#">{{fontSizes}}</a>
+      </li>
+    </ul>
+ </div>
+  <div class="btn-group" role="group" ng-if="showBack.back===true" dropdown is-open="status.isopen2">
+    <button type="button" class="btn btn-default dropdown-toggle" dropdown-toggle ng-disabled="disabled">Font Style<span class="caret"></span></button>
+      <ul class="dropdown-menu" role="menu">
+      <li ng-click="fontStyleChange(gFonts)" ng-repeat="gFonts in apiUrl">
+        <a style="font-family:{{gFonts}};" href="#">{{gFonts}}</a>
+      </li>
+    </ul>
+ </div>
+<div class="btn-group" ng-if="showBack.back===true">
+  <input ng-focus="addText()" name="customMessage" ng-model="defaults.content_text" type= "text" class= "form-control" placeholder="Custom Message" required/>
+</div>
+<div class="btn-group" ng-if="showBack.back===true">
+  <p class="margin0">Background color</p>
+  <div ng-click="changeColor('red')" ng-class='{"active": bgColor==="red"}' class="bg-color red"></div>
+  <div ng-click="changeColor('grey')" ng-class='{"active": bgColor==="grey"}' class="bg-color grey"></div>
+  <div ng-click="changeColor('green')" ng-class='{"active": bgColor==="green"}' class="bg-color green"></div>
+</div>
+</div>
+<div class="clearfix"></div>
+<div id="flip-container">
+  <div ng-class='{"card-bgBack": showBack.back===true}' class="card-bg face">
+  <div class="front face">
+  		<img ng-if="selectedImage" src="assets/images/{{selectedImage}}">
+  	<p class="image-text" ng-if="!selectedImage">{{defaults.content_image}}</p>
+  </div>
+  <div ng-class='bgColor' class="back face">
+  	<p class="custom-text" style="font-family:{{newFontStyle}}; font-size:{{newFontSize}}px;">{{defaults.content_text}}</p>
+  </div>
+</div>
+
+

@@ -1,0 +1,34 @@
+<!doctype html>
+<html ng-app="craftApp">
+<head>
+  <title>Craft demo using AngularJS</title>
+  <link href="css/bootstrap.css" rel="stylesheet" />
+	<link href="css/bootstrap-theme.css" rel="stylesheet" />
+  <link href="css/custom.css" rel="stylesheet" />
+  <script src="./ngmodules/angular/angular.min.js"></script>
+  <script src="./ngmodules/ui-router/angular-ui-router.js"></script>
+  <script src="./ngmodules/ui-bootstrap/ui-bootstrap-tpls-0.12.1.min.js"></script>
+  <script src="./controllers/craftCtrl.js"></script>
+  <script src="./controllers/routes.js"></script>
+  <script src="./services/data-service.js"></script>
+</head>
+
+<body ng-controller="GetCraft">
+<nav>
+    <div class="logo"><h3 class="margin-none">Craft demo using AngularJS</h3>
+      <p>Enables the user to select an image from their gallery and create a custom message on the back of the card.</p>
+    </div>
+</nav>
+<div class="wrapper">
+  <aside class="col-md-2">
+  </aside>
+  <section ui-view></section>
+    <p>Using the native AngularJS data binding features we can easily assign conditional classes and styles and other design attributes. This data can then be captured and sent to the server for setup and processing. Potentially this information could also be transformed into a Photoshop script to recreate the intended design, which could then be sent to production.</p>
+    <p>This example is a quick demo of how the front-end customer facing interaction could be created it is not intended to be a fully functional demo rather a starting place for further development.
+    </p>
+</div>
+<footer>
+  <p>by Josh Schoen - Designer and Web Developer
+  <a href="http://joshschoen.com">joshschoen.com</a></p>
+</footer>
+</body>
